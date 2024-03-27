@@ -1,0 +1,29 @@
+#### Examples:
+
+```
+apiVersion: v1
+
+kind: ReplicationController
+
+metadata:
+  name: my-rc
+  namespace: default
+  labels:
+    app: myapp
+
+
+spec:
+  template:
+    metadata:
+      name: my-rc      
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+  
+  replicas: 2
+
+
+```
