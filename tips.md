@@ -17,4 +17,8 @@ Kubectl:
   - Create a service:
     - `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml `
     - `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
-    - 
+  - Filter Labels:
+    - `kubectl get pods -l 'environment in (production),tier in (frontend)`
+
+
+Official Doc.: <https://kubernetes.io/docs/home/>
