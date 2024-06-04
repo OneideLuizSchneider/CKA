@@ -19,6 +19,8 @@ Kubectl:
     - `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
   - Filter Labels:
     - `kubectl get pods -l 'environment in (production),tier in (frontend)`
+  - Get PODs and their Nodes:
+    - `kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName`
 
 
 Official Doc.: <https://kubernetes.io/docs/home/>
