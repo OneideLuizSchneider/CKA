@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+
+      initContainers:
+      - name: init-nginx
+        image: busybox
+        command: ['sh', '-c', 'echo "hello initContainer $(hostname) $(NODE_NAME)" > /usr/share/nginx/html/index.html']
+        volumeMounts:
+        - name: data
+          mountPath: /usr/share/nginx/html
+        env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: data
+          mountPath: /usr/share/nginx/html
+
+      volumes:
+      - name: data
+        emptyDir: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: nginx
