@@ -21,6 +21,7 @@ Kubectl:
     - `kubectl get pods -l 'environment in (production),tier in (frontend)`
   - Get PODs and their Nodes:
     - `kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName`
-
+    or
+    - `kubectl get pod -o wide`
 
 Official Doc.: <https://kubernetes.io/docs/home/>
