@@ -24,4 +24,7 @@ Kubectl:
     or
     - `kubectl get pod -o wide`
 
+  - List Clusters in the config:
+    - `kubectl config get-clusters`
+
 Official Doc.: <https://kubernetes.io/docs/home/>
