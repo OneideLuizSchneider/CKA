@@ -21,3 +21,19 @@
     - To approve it: `kubectl certificate approve myuser`
     - To deny it:  `kubectl certificate deny myuser`
   - Doc: <https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/>
+
+- Kubeconfig
+  - Default path:
+    - `/root/.kube/`
+  - List all clusters:
+    - `k config get-clusters`
+  - List all users:
+    - `k config get-users`
+  - List all contexts:
+    - `k config get-contexts`
+  - List current context:
+    - `k config current-context`
+
+- To see the Auth modes:
+  - `k describe pod kube-apiserver -n kube-system`
+    - Look for `--authorization-mode=`
