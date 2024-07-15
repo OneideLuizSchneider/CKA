@@ -37,3 +37,21 @@
 - To see the Auth modes:
   - `k describe pod kube-apiserver -n kube-system`
     - Look for `--authorization-mode=`
+
+- To create permissions for a User:
+  - Role or ClusterRole:
+    - `kubectl create clusterrole myuser-role --verb=get,list,watch --resource=nodes`
+  - RoleBinding or ClusterRoleBindig:
+    - `kubectl create clusterrolebinding myuser-role-binding --clusterrole=myuser-role --user=myuser`
+  - Test it:
+    - k get nodes --as myuser
+
+- Security Context, run pod as non-root:
+  - ```
+      containers:
+      - name: ....
+        securityContext:
+          runAsUser: 1000
+          allowPrivilegeEscalation: false
+    ```
+  - Doc: <https://kubernetes.io/docs/tasks/configure-pod-container/security-context/> 
