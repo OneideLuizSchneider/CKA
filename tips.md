@@ -23,7 +23,7 @@ Kubectl:
     - `kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName`
     or
     - `kubectl get pod -o wide`
-
+  - `kubectl get nodes -o wide`
   - List Clusters in the config:
     - `kubectl config get-clusters`
 
