@@ -12,3 +12,15 @@
   - `netstat -npl | grep ...`
   - See the kube-scheduler port:
     - `netstat -npl | grep scheduler`
+- CNI
+  - Default path:
+    - `/opt/cni/...`
+  - To see which CNI is in use:
+    - `ls /etc/cni/net.d/`
+- iptables:
+  - `iptables -L -t nat | grep ...`
+- Kube-proxy logs
+  - `cat /var/log/kube-proxy.log`
+
+- Using nslookup with Services:
+  - `k exec -it pod-name -- nslookup nginx.default.cluster.local`

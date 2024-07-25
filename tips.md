@@ -26,5 +26,10 @@ Kubectl:
   - `kubectl get nodes -o wide`
   - List Clusters in the config:
     - `kubectl config get-clusters`
+  - Count Lines
+    - `... wc -l`
+    - `ls | wc -l`
+    - `kubectl get pods | wc -l`
+    - ....
 
 Official Doc.: <https://kubernetes.io/docs/home/>
