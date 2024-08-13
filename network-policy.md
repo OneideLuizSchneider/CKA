@@ -36,7 +36,7 @@ spec:
   - Egress
 ```
 
-This will allow only egress traffic to `service1` and `db-mysql`
+This will allow only egress traffic to `service1` and `db-mysql` and to ports `8080`,`3306` 
 
 
 Ingress example:
@@ -63,5 +63,5 @@ spec:
     - protocol: TCP
       port: 3306
 ```
-This will allow traffic to the label `db` from the label `api`.
+This will allow traffic to the label `db` from the label `api`, and to port `3306`
 

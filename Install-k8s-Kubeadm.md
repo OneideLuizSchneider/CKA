@@ -38,7 +38,7 @@ kubeadm join 192.168.2.53:6443 --token lrz5du.pqn77s83jpm2eyui \
 	--discovery-token-ca-cert-hash sha256:d0a6627a9611f92f98093436a3242ee7a30baf13414b2079cbbe8479bc2e4304
 ```
 
-K8s Network:
+- K8s Network:
   - Using Flannel:
     - `k apply -f kube-flannel.yml`    
   - After the Nodes will be Ready.

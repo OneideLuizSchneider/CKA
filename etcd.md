@@ -11,7 +11,7 @@
   - Others...
 
 - Some commands:
-  - etcdctl snapshot save 
+  - etcdctl snapshot save /path/bkp.db
   - etcdctl endpoint health
   - etcdctl get
   - etcdctl put

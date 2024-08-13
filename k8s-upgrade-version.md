@@ -7,18 +7,12 @@ sudo apt update
 sudo apt-cache madison kubeadm
 
 Results:
-kubeadm | 1.28.11-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.10-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.9-2.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.8-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.7-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.6-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.5-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.4-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.3-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
-kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.5-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.4-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.3-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
+kubeadm | 1.30.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
 ```
 
 - Start with the ControlPlane Nodes:
@@ -28,8 +22,9 @@ kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
     - List first:
       - `pager /etc/apt/sources.list.d/kubernetes.list`
     - `nano /etc/apt/sources.list.d/kubernetes.list`
-      - `deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /`
-    
+      - `deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /`
+    - Ob.: if you only wanna update it, just change the version, ex. `v1.30` on the link above.
+
     - Run again:
       ```
       sudo apt update
@@ -40,7 +35,7 @@ kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
   
     - ```
       sudo apt-mark unhold kubeadm && \
-      sudo apt-get update && sudo apt-get install -y kubeadm='1.29.6-1.1' && \
+      sudo apt-get update && sudo apt-get install -y kubeadm='1.30.0-1.1' && \
       sudo apt-mark hold kubeadm
       ```
     - Check the version
@@ -54,7 +49,7 @@ kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
     - Upgrading Kubelet and Kubectl:
       ```
       sudo apt-mark unhold kubelet kubectl && \
-      sudo apt-get update && sudo apt-get install -y kubelet='1.29.6-1.1' kubectl='1.29.6-1.1' && \
+      sudo apt-get update && sudo apt-get install -y kubelet='1.30.0-1.1' kubectl='1.30.0-1.1' && \
       sudo apt-mark hold kubelet kubectl
       ```
     - Restart Kubelet:
@@ -72,7 +67,7 @@ kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
   - Upgrade kubeadm
     ```
     sudo apt-mark unhold kubeadm && \
-    sudo apt-get update && sudo apt-get install -y kubeadm='1.29.6-1.1' && \
+    sudo apt-get update && sudo apt-get install -y kubeadm='1.30.0-1.1' && \
     sudo apt-mark hold kubeadm
     ```
   - Upgrade kubeadm:
@@ -82,7 +77,7 @@ kubeadm | 1.28.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.28/deb  Packages
   - Upgrading Kubelet and Kubectl:
     ```
     sudo apt-mark unhold kubelet kubectl && \
-    sudo apt-get update && sudo apt-get install -y kubelet='1.29.6-1.1' kubectl='1.29.6-1.1' && \
+    sudo apt-get update && sudo apt-get install -y kubelet='1.30.0-1.1' kubectl='1.30.0-1.1' && \
     sudo apt-mark hold kubelet kubectl
     ```
   - Restart Kubelet:
