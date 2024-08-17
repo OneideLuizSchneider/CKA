@@ -31,5 +31,8 @@ Kubectl:
     - `ls | wc -l`
     - `kubectl get pods | wc -l`
     - ....
+  - Remove a string with `sed`:
+    - current-context: minikube
+    - `cat ~/.kube/config | grep current | sed -e "s/: minikube//"`, result -> `current-context`
 
 Official Doc.: <https://kubernetes.io/docs/home/>
