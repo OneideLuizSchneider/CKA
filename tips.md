@@ -29,7 +29,9 @@ Kubectl:
   - Count Lines
     - `... wc -l`
     - `ls | wc -l`
-    - `kubectl get pods | wc -l`
+    - `sed "1d"` removes the first line
+    - `kubectl get pods | sed "1d" | wc -l`
+    - `k get nodes | sed "1d" | wc -l`
     - ....
   - Remove a string with `sed`:
     - current-context: minikube
