@@ -1,4 +1,4 @@
-Follow the steps until the kubeadm install:
+- Follow the steps until the kubeadm install:
   - <https://v1-29.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/>
   - Install a specific version:
     - `sudo apt-get install kubelet=1.30.0-1.1 kubeadm=1.30.0-1.1 kubectl=1.30.0-1.1`
@@ -40,5 +40,6 @@ kubeadm join 192.168.2.53:6443 --token lrz5du.pqn77s83jpm2eyui \
 
 - K8s Network:
   - Using Flannel:
-    - `k apply -f kube-flannel.yml`    
+    - `k apply -f ./help/kube-flannel.yml`    
   - After the Nodes will be Ready.
+  - ...or just use Minikube for tests and so on
