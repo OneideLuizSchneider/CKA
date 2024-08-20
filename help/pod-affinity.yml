@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+  namespace: default            
+spec:
+  replicas: 3                          
+  selector:
+    matchLabels:
+      run: nginx
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-container1
+      affinity:                                            
+        podAntiAffinity:                                   
+          requiredDuringSchedulingIgnoredDuringExecution:  
+          - labelSelector:                                 
+              matchExpressions:                            
+              - key: run                                   
+                operator: In                               
+                values:                                    
+                - nginx
+            topologyKey: kubernetes.io/hostname
+status: {}
