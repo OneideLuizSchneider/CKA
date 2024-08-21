@@ -2,6 +2,14 @@
 
 Helpful tips to achieve CKA certification.
 
+## Domains & Competencies
+
+- Storage 10%
+- Troubleshooting 30%
+- Workloads & Scheduling 15%
+- Cluster Architecture, Installation & Configuration 25%
+- Services & Networking 20%
+
 ## Resources I used for the Exam Preparation
 
 - Kubernetes [Official Documentation](https://kubernetes.io/docs/home/), for sure!
