@@ -14,7 +14,7 @@
     - `netstat -npl | grep scheduler`
 - CNI
   - Default path:
-    - `/opt/cni/...`
+    - `/etc/cni/...`
   - To see which CNI is in use:
     - `ls /etc/cni/net.d/`
 - iptables:
