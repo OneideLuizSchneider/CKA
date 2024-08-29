@@ -39,6 +39,6 @@ Kubectl:
   - Remove a string with `sed`:
     - string: `current-context: minikube`
     - removing `minikube` from it:
-      - `cat ~/.kube/config | grep current | sed -e "s/: minikube//"`, result -> `current-context`
+      - `cat ~/.kube/config | grep current | sed -e "s/current-context: //"`, result -> `minikube`
 
 Official Doc.: <https://kubernetes.io/docs/home/>
