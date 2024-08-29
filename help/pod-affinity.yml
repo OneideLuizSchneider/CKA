@@ -19,7 +19,10 @@ spec:
       containers:
       - image: nginx
         name: nginx-container1
-      affinity:                                            
+      affinity:           
+        # The podAntiAffinity rule tells the scheduler 
+        # to avoid placing multiple replicas with the 
+        # `mylabel=value` label on a single node.
         podAntiAffinity:                                   
           requiredDuringSchedulingIgnoredDuringExecution:  
           - labelSelector:                                 
